@@ -1,9 +1,11 @@
 const menu = {
-  'Search': function () {
-    return []
-  },
-  'Check out': null,
-  'Return': null
+  menuActions: {
+    Search: function () {
+      return []
+    },
+    'Check out': null,
+    Return: null
+  }
 }
 
 const libraryObject = {
@@ -15,7 +17,13 @@ const libraryObject = {
   }
 }
 
-export function library () {
+export function library (libraryReader) {
+  if (libraryReader) {
+    const bookList = libraryReader()
+    menu.menuActions.Search = function () {
+      return bookList
+    }
+  }
   return libraryObject
 }
 
