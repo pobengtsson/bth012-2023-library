@@ -1,0 +1,32 @@
+{
+  "name": "bth012-2023-library",
+  "version": "0.0.1",
+  "description": "A small node.js project for a library with jest unit tests.",
+  "main": "library.js",
+  "type": "module",
+  "scripts": {
+    "library": "NODE_OPTIONS=--experimental-vm-modules node library.js",
+    "watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pobengtsson/bth012-2023-library.git"
+  },
+  "keywords": [],
+  "author": "Per-Olof Bengtsson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pobengtsson/bth012-2023-library/issues"
+  },
+  "homepage": "https://github.com/pobengtsson/bth012-2023-library#readme",
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jest": "^27.4.2",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.7.0"
+  }
+}
