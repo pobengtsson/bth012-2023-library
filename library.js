@@ -25,5 +25,5 @@ export function library (libraryReader) {
 
 // if run as node index.js then say hello to the console
 if (import.meta.url === `file://${process.argv[1]}`) {
-  console.log(library())
+  console.log(library(() => []).start())
 }
