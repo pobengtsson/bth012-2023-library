@@ -5,9 +5,9 @@
   "main": "library.js",
   "type": "module",
   "scripts": {
-    "library": "NODE_OPTIONS=--experimental-vm-modules node library.js",
-    "watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "library": "cross-env NODE_OPTIONS=--experimental-vm-modules node library.js",
+    "watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pobengtsson/bth012-2023-library#readme",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^8.51.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.28.1",
