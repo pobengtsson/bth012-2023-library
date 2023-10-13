@@ -11,19 +11,15 @@ const menu = {
 const libraryObject = {
   start: function () {
     return 'Welcome to our library'
-  },
-  menu: function () {
-    return menu
   }
 }
 
 export function library (libraryReader) {
-  if (libraryReader) {
-    const bookList = libraryReader()
-    menu.menuActions.Search = function () {
-      return bookList
-    }
+  const bookList = libraryReader()
+  menu.menuActions.Search = function (title) {
+    return bookList.filter((book) => book.title === title)
   }
+  libraryObject.menu = menu
   return libraryObject
 }
 
