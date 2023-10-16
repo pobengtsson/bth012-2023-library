@@ -3,7 +3,7 @@ const menu = {
     Search: function () {
       return []
     },
-    'Check out': null,
+    Borrow: null,
     Return: null
   }
 }
@@ -17,8 +17,16 @@ const libraryObject = {
 
 export function library (libraryReader) {
   const bookList = libraryReader()
-  menu.menuActions.Search = function (title) {
-    return bookList.filter((book) => book.title === title)
+  menu.menuActions.Search = function (titlePart) {
+    return bookList.filter((book) => book.title.indexOf(titlePart) !== -1)
+  }
+  menu.menuActions.Borrow = function (book) {
+    const msSecs = Date.now() + 1000 * 60 * 60 * 24 * 21
+    book.returnDate = new Date(msSecs)
+    return book
+  }
+  menu.menuActions.Return = function (book) {
+    delete book.returnDate
   }
   libraryObject.menu = menu
   return libraryObject
